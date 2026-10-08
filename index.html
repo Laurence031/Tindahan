@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tindahan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- radio inputs: sila ang nagco-control kung anong section ang makikita -->
+  <input type="radio" name="tabs" id="tab-home" class="tab-radio" checked>
+  <input type="radio" name="tabs" id="tab-inventory" class="tab-radio">
+  <input type="radio" name="tabs" id="tab-reports" class="tab-radio">
+  <input type="radio" name="tabs" id="tab-payroll" class="tab-radio">
+
+  <div class="sidebar">
+    <h2>🏪 TINDAHAN</h2>
+    <label for="tab-home">🏠 Home</label>
+    <label for="tab-inventory">📦 Inventory/Costing</label>
+    <label for="tab-reports">📄 Reports</label>
+    <label for="tab-payroll">💰 Payroll</label>
+    <button type="button" class="sidebar-bell" id="bell-btn">🔔 Notifications <span class="bell-count" id="bell-count" hidden>0</span></button>
+  </div>
+  <div class="bell-panel" id="bell-panel" hidden></div>
+
+  <section id="Home" class="content home-page">
+    <div class="home-dashboard">
+      <div class="welcome-row">
+        <div class="welcome">
+          <div class="profile-circle">●</div>
+          <div class="welcome-text">
+            <p>GOOD MORNING!</p>
+            <h1>Iya Browns</h1>
+          </div>
+        </div>
+        <div class="dashboard-search">
+          <span>⌕</span>
+          <input type="text" aria-label="Search">
+          <span class="close">×</span>
+        </div>
+      </div>
+
+      <div class="date-card">
+        <div class="calendar-icon">▦</div>
+        <div>
+          <strong id="today-date">October 05, 2026</strong>
+          <small id="today-day">Monday</small>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card"><div class="stat-icon">▦</div><div><p>Total Businesses/Branches</p><h2>125</h2><span>⬆ +8 this month</span></div></div>
+        <div class="stat-card"><div class="stat-icon">✓</div><div><p>Active Businesse/Branches</p><h2>118</h2><span>⬆ 90% active rate</span></div></div>
+        <div class="stat-card"><div class="stat-icon">₱</div><div><p>Monthly Revenue</p><h2>18,750</h2><span>⬆ 12% vs. last month</span></div></div>
+        <div class="stat-card"><div class="stat-icon">♙</div><div><p>New Registration</p><h2>7</h2><span>⬆ +3 this week</span></div></div>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="panel business-panel">
+          <div class="panel-title"><span class="title-icon">▦</span><h3>Business List</h3></div>
+          <div class="business-search"><span>⌕</span><input type="text" placeholder="Search business..."><span>×</span></div>
+          <div class="business-list">
+            <div class="business-item selected"><div class="business-logo cupcake">🧁</div><div class="business-info"><strong>Bakery ni Thea</strong><small>Food & Beverage</small></div><span class="status active-status">Active</span><span class="arrow">›</span></div>
+            <div class="business-item"><div class="business-logo tech">♙</div><div class="business-info"><strong>Tambor Tech Shop</strong><small>Electronics</small></div><span class="status active-status">Active</span><span class="arrow">›</span></div>
+            <div class="business-item"><div class="business-logo grocery">🛒</div><div class="business-info"><strong>Palengke</strong><small>Grocery</small></div><span class="status active-status">Active</span><span class="arrow">›</span></div>
+            <div class="business-item"><div class="business-logo cafe">☕</div><div class="business-info"><strong>Social Climbing Cafe</strong><small>Food & Beverage</small></div><span class="status active-status">Active</span><span class="arrow">›</span></div>
+            <div class="business-item"><div class="business-logo style">♧</div><div class="business-info"><strong>Ukayan</strong><small>Clothing</small></div><span class="status pending-status">Pending</span><span class="arrow">›</span></div>
+            <div class="business-item"><div class="business-logo game">🎮</div><div class="business-info"><strong>Mobile Legends</strong><small>Gaming</small></div><span class="status inactive-status">Inactive</span><span class="arrow">›</span></div>
+          </div>
+          <a class="view-businesses" href="#">View All Businesses →</a>
+        </section>
+
+        <div class="middle-column">
+          <section class="selected-business">
+            <div class="business-photo cupcake-large">🧁</div>
+            <div class="selected-info">
+              <div class="business-heading"><h2>Bakery ni Thea</h2><span class="active-pill">Active</span></div>
+              <div class="details">
+                <div><b>♟ Owner</b><small>Althea Macalalag</small></div>
+                <div><b>⌖ Location</b><small>Balita, Bulacan</small></div>
+                <div><b>▦ Category</b><small>Food & Beverage</small></div>
+              </div>
+            </div>
+            <button class="edit-btn">✎ Edit</button>
+          </section>
+
+          <section class="panel transactions">
+            <div class="transaction-heading"><h2>☷ Recent Transactions</h2><a href="#">View All ▶</a></div>
+            <table>
+              <thead><tr><th>DATE</th><th>BUSINESS NAME</th><th>TYPE</th><th>AMOUNT</th><th>STATUS</th></tr></thead>
+              <tbody>
+                <tr><td>10/04/2026</td><td>Bakery ni Thea</td><td>Sale</td><td>850</td><td><span class="completed">Completed</span></td></tr>
+                <tr><td>10/03/2026</td><td>Palengke</td><td>Sale</td><td>1,250</td><td><span class="completed">Completed</span></td></tr>
+                <tr><td>10/03/2026</td><td>Tambor Techshop</td><td>Sale</td><td>2,800</td><td><span class="completed">Completed</span></td></tr>
+                <tr><td>10/02/2026</td><td>Social Climbing Cafe</td><td>Sale</td><td>2,800</td><td><span class="completed">Completed</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <section class="panel revenue">
+            <div class="panel-title"><span class="title-icon">▥</span><h3>Revenue Breakdown</h3></div>
+            <div class="revenue-content">
+              <div class="donut"><div class="donut-hole"></div></div>
+              <div class="legend">
+                <div><i class="dot food"></i> Food <b>40%</b></div>
+                <div><i class="dot drinks"></i> Drinks <b>25%</b></div>
+                <div><i class="dot dessert"></i> Dessert <b>20%</b></div>
+                <div><i class="dot others"></i> Others <b>10%</b></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel products">
+            <div class="product-heading"><h3>♛ Top Selling Products</h3><a href="#">View All →</a></div>
+            <div class="product"><div class="product-img cupcake">🧁</div><div><strong>Classic Cupcake</strong><small>120 Sold</small></div><b>₱ 35</b></div>
+            <div class="product"><div class="product-img bread">🍞</div><div><strong>Banana Bread</strong><small>93 Sold</small></div><b>₱ 40</b></div>
+            <div class="product"><div class="product-img coffee">☕</div><div><strong>Iced Coffee</strong><small>80 Sold</small></div><b>₱ 50</b></div>
+          </section>
+
+          <section class="panel insights">
+            <div class="insight-heading"><h3>♟ Business Insights</h3><a href="#">View All →</a></div>
+            <p>✓ Pero nay, aminin mo.</p><p>✓ ay nakatulog?</p><p>✓ yoohoo dito ang tingin.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section id="inventory" class="content">
+    <h1>📦 Inventory & Costing</h1>
+    <div class="cards">
+      <div class="card green"><div class="icon">📦</div><div class="info"><p class="label">Total Items</p><h3 class="number" id="card-total-items">0</h3><p class="note">Updated real-time</p></div></div>
+      <div class="card blue"><div class="icon">🛒</div><div class="info"><p class="label">Total Stock Value</p><h3 class="number" id="card-total-value">₱0.00</h3><p class="note">Based on unit cost</p></div></div>
+      <div class="card yellow"><div class="icon">🪙</div><div class="info"><p class="label">Total Potential Profit</p><h3 class="number" id="card-potential-profit">₱0.00</h3><p class="note">If all stock sold</p></div></div>
+      <div class="card red"><div class="icon">❗</div><div class="info"><p class="label">Low Stock Items</p><h3 class="number" id="card-low-stock">0</h3><p class="note">Needs restocking (&le; 10)</p></div></div>
+      <!-- Dito pwedeng ilagay sa itaas ng table -->
+<div class="scanner-section" style="margin-bottom: 15px; display: flex; gap: 10px; align-items: center;">
+  <input type="text" id="barcode-input" placeholder="⚡ Scan barcode here..." autofocus style="padding: 10px; border-radius: 6px; border: 2px solid #0d5c50; width: 250px;">
+  <button id="toggle-camera-btn" style="padding: 10px 15px; background: #0d5c50; color: white; border: none; border-radius: 6px; cursor: pointer;">📷 Open Camera Scanner</button>
+</div>
+
+<!-- Modal o Reader div para sa Web Camera -->
+<div id="camera-reader-container" style="display:none; width: 300px; margin-bottom: 15px;">
+  <div id="reader"></div>
+</div>
+
+<!-- Isama ang HTML5 QR/Barcode Scanner CDN library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+    </div>
+
+    <div class="main-row">
+      <div class="inventory">
+        <div class="inv-top">
+          <h2>Inventory List</h2>
+          <button class="add-btn" id="open-add-modal-btn">+ Add Product</button>
+        </div>
+        <div class="filters">
+          <input type="text" id="inv-search" placeholder="🔍 Search product..." style="padding: 6px 10px; border-radius: 8px; border: 1px solid #ccc; margin-right: 8px;">
+          <select id="filter-category">
+            <option value="All">All Categories</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Instant noodles">Instant noodles</option>
+            <option value="Biscuits">Biscuits</option>
+            <option value="Canned goods">Canned goods</option>
+            <option value="Condiments">Condiments</option>
+            <option value="Frozen foods">Frozen foods</option>
+            <option value="Essential">Essential</option>
+          </select>
+          <select id="filter-status">
+            <option value="All">All Stock Status</option>
+            <option value="In stock">In stock</option>
+            <option value="Low stock">Low stock</option>
+            <option value="Out of stock">Out of stock</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Unit cost</th>
+                <th>Selling Price</th>
+                <th>Stock Qty</th>
+                <th>Total cost</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-table-body">
+              <!-- Dito lalabas ang dynamic products galing sa JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="panel">
+          <h3>Selected Product Costing</h3>
+          <div class="product">
+            <div class="product-img" id="side-img">📦</div>
+            <div>
+              <b id="side-name">Select a product</b>
+              <p class="small" id="side-category">-</p>
+            </div>
+          </div>
+          <div class="row"><span>Purchase Price (Unit cost)</span><span id="side-unit-cost">₱0.00</span></div>
+          <div class="row"><span>Shipping/delivery cost</span><span id="side-shipping">₱2.00</span></div>
+          <div class="row"><span>Other direct cost</span><span id="side-other-cost">₱1.00</span></div>
+          <div class="row total"><span>Total cost per unit</span><span id="side-total-unit-cost">₱0.00</span></div>
+          <div class="row"><span>Selling price</span><span id="side-selling-price">₱0.00</span></div>
+          <div class="row"><span>Estimated profit per unit</span><span id="side-profit">₱0.00</span></div>
+          <div class="row"><span>Profit margin</span><span class="profit" id="side-margin">0%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Form para sa Add Product -->
+  <dialog id="product-modal" style="border: none; border-radius: 12px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); width: 340px;">
+    <h3 id="modal-title" style="margin-top:0;">Add New Product</h3>
+    <form id="add-product-form" method="dialog" style="display: flex; flex-direction: column; gap: 10px;">
+      <input type="text" id="p-name" placeholder="Product Name" required style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+      <select id="p-category" required style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+        <option value="Beverages">Beverages</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Instant noodles">Instant noodles</option>
+        <option value="Biscuits">Biscuits</option>  
+        <option value="Canned goods">Canned goods</option>
+        <option value="Condiments">Condiments</option>
+        <option value="Frozen foods">Frozen foods</option>
+        <option value="Essential">Essential</option>
+      </select>
+      <input type="number" step="0.01" id="p-cost" placeholder="Unit Cost (₱)" required style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="number" step="0.01" id="p-price" placeholder="Selling Price (₱)" required style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="number" id="p-qty" placeholder="Stock Quantity" min="0" step="1" required style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="text" id="p-barcode" placeholder="Barcode (optional)" maxlength="40" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="number" step="0.01" min="0" id="p-shipping" placeholder="Shipping/delivery cost per unit (optional)" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="number" step="0.01" min="0" id="p-other" placeholder="Other direct cost per unit (optional)" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="hidden" id="p-id">
+      
+      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px;">
+        <button type="button" id="close-modal-btn" style="padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; background: #fff; cursor: pointer;">Cancel</button>
+        <button type="submit" style="padding: 8px 12px; border-radius: 6px; border: none; background: #0d5c50; color: white; cursor: pointer;">Save Product</button>
+      </div>
+    </form>
+  </dialog>
+
+  <section id="reports" class="content reports-page">
+    <div class="reports-header"><div class="reports-header-icon">📊</div><div><h1>Reports</h1><p>Analyze your weekly and daily statistic</p></div></div>
+    <div class="reports-tools">
+      <label>Range
+        <select id="report-days"><option value="7">Last 7 days</option><option value="14">Last 14 days</option></select>
+      </label>
+      <span class="reports-source" id="report-source">Loading…</span>
+      <button type="button" class="tool-btn" id="demo-load" hidden>Load demo sales</button>
+      <button type="button" class="tool-btn ghost" id="demo-clear" hidden>Clear demo sales</button>
+    </div>
+    <div class="report-cards">
+      <div class="report-card revenue"><div class="report-card-icon">🪙</div><div class="report-card-content"><p class="report-card-label">Total Revenue</p><h2 class="report-card-number">₱ 47,890.00</h2><p class="report-card-note">↑ +10% vs previous week</p></div></div>
+      <div class="report-card cost"><div class="report-card-icon">💵</div><div class="report-card-content"><p class="report-card-label">Total Costs</p><h2 class="report-card-number">₱ 28,450.00</h2><p class="report-card-note">↑ +12% vs previous week</p></div></div>
+      <div class="report-card profit"><div class="report-card-icon">📈</div><div class="report-card-content"><p class="report-card-label">Net Profit</p><h2 class="report-card-number">₱ 19,440.00</h2><p class="report-card-note">↑ +22% vs previous week</p></div></div>
+      <div class="report-card orders"><div class="report-card-icon">🛍️</div><div class="report-card-content"><p class="report-card-label">Total Orders</p><h2 class="report-card-number">142</h2><p class="report-card-note">↗ +18% vs previous week</p></div></div>
+    </div>
+
+    <div class="report-top-row">
+      <div class="report-box">
+        <h2>Revenue &amp; Profit Trends</h2>
+        <div class="chart-legend"><span><i class="legend-green"></i>Revenue</span><span><i class="legend-pink"></i>Profit</span></div>
+        <div class="revenue-chart">
+          <div class="revenue-grid"></div>
+          <div class="chart-y-labels"><span>10,000</span><span>8,000</span><span>6,000</span><span>4,000</span><span>2,000</span><span>0</span></div>
+          <div class="chart-day"><div class="chart-bar bar-1"></div><span class="chart-day-label">Sept. 27</span></div>
+          <div class="chart-day"><div class="chart-bar bar-2"></div><span class="chart-day-label">Sept. 28</span></div>
+          <div class="chart-day"><div class="chart-bar bar-3"></div><span class="chart-day-label">Sept. 29</span></div>
+          <div class="chart-day"><div class="chart-bar bar-4"></div><span class="chart-day-label">Sept. 30</span></div>
+          <div class="chart-day"><div class="chart-bar bar-5"></div><span class="chart-day-label">Oct. 1</span></div>
+          <div class="chart-day"><div class="chart-bar bar-6"></div><span class="chart-day-label">Oct. 2</span></div>
+          <div class="chart-day"><div class="chart-bar bar-7"></div><span class="chart-day-label">Oct. 3</span></div>
+          <div class="chart-line"><svg viewBox="0 0 700 150" preserveAspectRatio="none"><polyline points="8,82 115,92 225,65 335,58 445,75 555,95 680,25" fill="none" stroke="#e5a9a9" stroke-width="3"/><circle cx="8" cy="82" r="4" fill="#e5a9a9"/><circle cx="115" cy="92" r="4" fill="#e5a9a9"/><circle cx="225" cy="65" r="4" fill="#e5a9a9"/><circle cx="335" cy="58" r="4" fill="#e5a9a9"/><circle cx="445" cy="75" r="4" fill="#e5a9a9"/><circle cx="555" cy="95" r="4" fill="#e5a9a9"/><circle cx="680" cy="25" r="4" fill="#e5a9a9"/></svg></div>
+        </div>
+      </div>
+
+      <div class="report-box">
+        <h2>Expenses Breakdown</h2>
+        <div class="expense-chart-area">
+          <div class="expense-donut"><div class="expense-donut-center"><strong>₱ 41,580</strong><span>Total Expenses</span></div></div>
+          <div class="expense-legend">
+            <div class="expense-legend-row"><span class="expense-dot" style="background:#d59c7c;"></span><span class="expense-name">Main Dishes</span><span class="expense-value">₱18,600</span></div>
+            <div class="expense-legend-row"><span class="expense-dot" style="background:#92c2a5;"></span><span class="expense-name">Snacks</span><span class="expense-value">₱9,630</span></div>
+            <div class="expense-legend-row"><span class="expense-dot" style="background:#d7bb70;"></span><span class="expense-name">Beverages</span><span class="expense-value">₱6,900</span></div>
+            <div class="expense-legend-row"><span class="expense-dot" style="background:#eadc9e;"></span><span class="expense-name">Desserts</span><span class="expense-value">₱4,350</span></div>
+            <div class="expense-legend-row"><span class="expense-dot" style="background:#667d58;"></span><span class="expense-name">Others</span><span class="expense-value">₱2,100</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="report-box top-sales">
+        <h2>This week's top sales</h2>
+        <div class="top-sale"><div class="top-sale-image">🧂</div><div class="top-sale-bar sale-75">75</div><span class="top-sale-prod">Salt</span></div>
+        <div class="top-sale"><div class="top-sale-image">🍜</div><div class="top-sale-bar sale-50">50</div><span class="top-sale-prod">Luck Me</span></div>
+        <div class="top-sale"><div class="top-sale-image">🥣</div><div class="top-sale-bar sale-80">80</div><span class="top-sale-prod">Bowl</span></div>
+        <div class="top-sale"><div class="top-sale-image">🧴</div><div class="top-sale-bar sale-30">30</div><span class="top-sale-prod">Sunsilk</span></div>
+        <div class="top-sale"><div class="top-sale-image">🧼</div><div class="top-sale-bar sale-65">65</div><span class="top-sale-prod">Safeguard</span></div>
+      </div>
+    </div>
+
+    <div class="report-bottom-row">
+      <div class="report-box">
+        <h2>Expenses Breakdown</h2>
+        <div class="bottom-donut"><div class="bottom-expense-donut"><div class="bottom-donut-center"><strong>₱ 27,050</strong><span>Total Expenses</span></div></div></div>
+        <div class="expense-legend">
+          <div class="expense-legend-row"><span class="expense-dot" style="background:#d59c7c;"></span><span class="expense-name">Ingredients</span><span class="expense-value">₱9,390</span></div>
+          <div class="expense-legend-row"><span class="expense-dot" style="background:#92c2a5;"></span><span class="expense-name">Labor Costs</span><span class="expense-value">₱6,500</span></div>
+          <div class="expense-legend-row"><span class="expense-dot" style="background:#d7bb70;"></span><span class="expense-name">Utilities &amp; Overhead</span><span class="expense-value">₱4,270</span></div>
+          <div class="expense-legend-row"><span class="expense-dot" style="background:#eadc9e;"></span><span class="expense-name">Packaging</span><span class="expense-value">₱2,650</span></div>
+          <div class="expense-legend-row"><span class="expense-dot" style="background:#667d58;"></span><span class="expense-name">Equipment Maintenance</span><span class="expense-value">₱2,280</span></div>
+          <div class="expense-legend-row"><span class="expense-dot" style="background:#b77c67;"></span><span class="expense-name">Others</span><span class="expense-value">₱1,960</span></div>
+        </div>
+      </div>
+
+      <div class="report-box recent-sales-box">
+        <h2>Recent Sales / Performance</h2>
+        <table class="recent-sales-table">
+          <tr><th>Date &amp; Time</th><th>Order #</th><th>Items</th><th>Total Amount</th><th>Payment Method</th><th>Status</th></tr>
+          <tr><td>May 2, 2026 9:00 AM</td><td>#SB10042</td><td>6</td><td>₱320.00</td><td>Cash</td><td class="recent-complete">Complete</td></tr>
+          <tr><td>May 2, 2026 6:18 PM</td><td>#SB10041</td><td>8</td><td>₱610.00</td><td>Cash</td><td class="recent-complete">Complete</td></tr>
+          <tr><td>May 2, 2026 0:03 PM</td><td>#SB10040</td><td>4</td><td>₱180.00</td><td>GCash</td><td class="recent-complete">Complete</td></tr>
+          <tr><td>May 2, 2026 3:47 PM</td><td>#SB10039</td><td>7</td><td>₱540.00</td><td>Cash</td><td class="recent-complete">Complete</td></tr>
+          <tr><td>May 2, 2026 2:21 PM</td><td>#SB10038</td><td>5</td><td>₱309.00</td><td>GCash</td><td class="recent-complete">Complete</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="payroll" class="content">
+    <div class="page-top">
+      <h1>💼 Payroll Management</h1>
+      <div class="top-actions">
+        <select class="period" id="pr-period"><option>Loading…</option></select>
+        <button class="add-btn" id="pr-add-emp">+ Add Employee</button>
+        <button class="add-btn" id="pr-export">Generate Payroll Report</button>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card blue"><div class="icon">👥</div><div class="info"><p class="label">Total Employees</p><h3 class="number" id="pr-count">0</h3></div></div>
+      <div class="card green"><div class="icon">👛</div><div class="info"><p class="label">Total Gross Pay</p><h3 class="number" id="pr-gross">₱0.00</h3></div></div>
+      <div class="card purple"><div class="icon">🧾</div><div class="info"><p class="label">Total Deductions</p><h3 class="number" id="pr-ded">₱0.00</h3></div></div>
+      <div class="card red"><div class="icon">💸</div><div class="info"><p class="label">Total Net Pay</p><h3 class="number" id="pr-net">₱0.00</h3></div></div>
+    </div>
+
+    <div class="main-row">
+      <div class="inventory">
+        <div class="search-row"><input type="text" class="search-box" id="pr-search" placeholder="🔍 Search Employee..."><select class="status-filter" id="pr-status"><option>All</option><option>Processed</option><option>Pending</option></select></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Employee</th><th>Position</th><th>Regular Pay</th><th>Overtime Pay</th><th>Deductions</th><th>Net Salary</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="pr-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="panel" id="pr-detail"><h3>Selected Employee</h3></div>
+        <div class="panel">
+          <h3>Quick Actions</h3>
+          <button class="quick-btn" id="pr-edit-inputs">Edit Days / OT / Deductions</button>
+          <button class="quick-btn" id="pr-toggle-status">Mark as Processed</button>
+          <button class="quick-btn" id="pr-edit-emp">Edit Employee</button>
+          <button class="quick-btn" id="pr-del-emp">Remove Employee</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payroll dialogs -->
+  <dialog id="emp-modal" class="fb-dialog">
+    <h3 id="emp-title">Add Employee</h3>
+    <form id="emp-form" method="dialog">
+      <input type="hidden" id="emp-id">
+      <input type="text" id="emp-name" placeholder="Full name" maxlength="60" required>
+      <input type="text" id="emp-position" list="position-list" placeholder="Position (e.g. Cashier)" maxlength="40" required>
+      <datalist id="position-list"><option>Manager</option><option>Cashier</option><option>Stocker</option><option>Sales Associate</option><option>Delivery Rider</option><option>Utility</option></datalist>
+      <input type="number" id="emp-rate" placeholder="Daily rate (₱)" min="0" max="10000" step="0.01" required>
+      <div class="fb-actions"><button type="button" id="emp-cancel" class="fb-btn">Cancel</button><button type="submit" class="fb-btn primary">Save Employee</button></div>
+    </form>
+  </dialog>
+  <dialog id="pay-modal" class="fb-dialog">
+    <h3 id="pay-title">Payroll inputs</h3>
+    <form id="pay-form" method="dialog">
+      <label>Days worked <input type="number" id="pay-days" min="0" max="16" step="0.5" required></label>
+      <label>Overtime hours <input type="number" id="pay-ot" min="0" max="200" step="0.5"></label>
+      <label>Late / undertime (minutes) <input type="number" id="pay-late" min="0" max="10000" step="1"></label>
+      <label>Other deductions (₱) <input type="number" id="pay-other" min="0" step="0.01"></label>
+      <div class="fb-actions"><button type="button" id="pay-cancel" class="fb-btn">Cancel</button><button type="submit" class="fb-btn primary">Save</button></div>
+    </form>
+  </dialog>
+
+  <script>
+    // realtime na date sa date card (kinukuha sa oras ng device)
+    function updateDate() {
+      var now = new Date();
+      document.getElementById("today-date").textContent =
+        now.toLocaleDateString("en-US", { month: "long", day: "2-digit", year: "numeric" });
+      document.getElementById("today-day").textContent =
+        now.toLocaleDateString("en-US", { weekday: "long" });
+    }
+    updateDate();
+    setInterval(updateDate, 60000); // check kada minuto para magpalit pag lumipas ang hatinggabi
+  </script>
+ <script src="admin-firebase.js"></script>
+</body>
+</body>
+</html>
